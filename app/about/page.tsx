@@ -11,7 +11,7 @@ export default function about() {
         <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md p-6 transform transition duration-300 hover:scale-[1.01] hover:shadow-xl">
           <h2 className="text-3xl font-bold mb-3">About Me</h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            I’m Shivam Roy, a web developer with a passion for crafting scalable, accessible, and modern web applications. I specialize in React, Next.js, and Tailwind CSS, and love turning ideas into clean and functional user interfaces. I also enjoy learning new technologies and contributing to open-source projects.
+            I am Shivam Roy, a web developer with a passion for crafting scalable, accessible, and modern web applications. I specialize in React, Next.js, and Tailwind CSS, and love turning ideas into clean and functional user interfaces. I also enjoy learning new technologies and contributing to open-source projects.
           </p>
         </div>
 
@@ -20,7 +20,7 @@ export default function about() {
           <h2 className="text-2xl font-semibold mb-3">Education</h2>
           <ul className="space-y-2">
             <li>
-              <h4 className="font-medium">Bachelor of Technology in Computer Science & Engineering</h4>
+              <h4 className="font-medium">Bachelor of Technology in Computer Science and Engineering</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 National Institute of Technology – 2023 - Present
               </p>
