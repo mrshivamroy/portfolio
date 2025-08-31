@@ -18,9 +18,9 @@ export default function Page() {
 
         {/* About Me Card */}
         <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md p-6 transform transition duration-300 hover:scale-[1.01] hover:shadow-xl">
-          <h2 className="text-3xl font-bold mb-3">Hi, I'm Shivam Roy 👋</h2>
+          <h2 className="text-3xl font-bold mb-3">Hi, I am Shivam Roy 👋</h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            I'm a passionate web developer with a strong interest in building elegant, performant, and accessible web applications. I enjoy working with modern technologies like React, Next.js, and Tailwind CSS to craft intuitive user experiences.
+            I am a passionate web developer with a strong interest in building elegant, performant, and accessible web applications. I enjoy working with modern technologies like React, Next.js, and Tailwind CSS to craft intuitive user experiences.
           </p>
 
           <div className="mt-6">
