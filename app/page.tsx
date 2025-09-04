@@ -1,16 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import SkillCard from "@/components/SkillCard";
 
 export default function Page() {
   const skills = [
-    { name: 'JavaScript', level: 'Advanced' },
-    { name: 'TypeScript', level: 'Intermediate' },
-    { name: 'React & Next.js', level: 'Intermediate' },
-    { name: 'Tailwind CSS', level: 'Intermediate' },
-    { name: 'Node.js', level: 'Intermediate' },
-    { name: 'Git & GitHub', level: 'Proficient' },
-  ];
+    { name: "JavaScript", level: "Intermediate", color: "#f7df1e" }, // yellow
+    { name: "React & Node.js", level: "Intermediate", color: "#61dafb" }, // cyan
+    { name: "Git & GitHub", level: "Proficient", color: "#f05032" }, // orange-red
+    { name: "Tailwind CSS", level: "Basic", color: "#38bdf8" }, // sky blue
+    { name: "TypeScript", level: "Basic", color: "#3178c6" }, // blue
+    { name: "Next.js", level: "Basic", color: "#000000" }, // black or you can pick a color you like
+  ];  
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-4 py-10">
@@ -38,13 +39,12 @@ export default function Page() {
           <h3 className="text-2xl font-semibold mb-6">Skill Set</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {skills.map((skill) => (
-              <div
+              <SkillCard
                 key={skill.name}
-                className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-sm transform transition duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <h4 className="text-lg font-semibold">{skill.name}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{skill.level}</p>
-              </div>
+                name={skill.name}
+                level={skill.level}
+                color={skill.color}
+              />
             ))}
           </div>
         </section>
