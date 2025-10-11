@@ -42,7 +42,7 @@ const Mousepointer: React.FC<MousepointerProps> = ({ children }) => {
 
   useEffect(() => {
     let frameId: number;
-    const startTime = performance.now();
+    let startTime = performance.now();
 
     const animateColor = (time: number) => {
       const elapsed = time - startTime;
