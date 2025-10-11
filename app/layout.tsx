@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Shivam Roy",
   description: "Portfolio of Shivam Roy",
+  other: {
+    'google-site-verification': '43OO9ZJqfb7aarEyy6AzP_rSo7OUqQDyF93IMhuWfQA',
+  },
 };
 
 export default function DashboardLayout({
