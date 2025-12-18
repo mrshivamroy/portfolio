@@ -1,36 +1,225 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Portfolio Website
 
-## Getting Started
+A **production-ready full stack portfolio website** built with **Next.js (App Router, JSX)**, Tailwind CSS, MongoDB, and secure backend APIs. This project is designed to be **clean, professional, scalable**, and suitable for real-world deployment.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+### 🌐 Public Pages
+
+* **Home (`/`)**
+
+  * Profile image & description (from backend)
+  * Education dropdown (dynamic)
+  * CTA buttons (Projects, Contact)
+  * One-time session popup (HTML content from backend)
+
+* **Projects (`/project`)**
+
+  * Toggle between *Ongoing* and *Completed*
+  * Tile-based layout
+  * Popup modal with full project details
+
+* **Gallery (`/gallery`)**
+
+  * Toggle between Images & Videos
+  * Tiles layout
+  * Popup viewer (videos play only inside popup)
+
+* **Contact (`/contact`)**
+
+  * Contact form
+  * Free Image CAPTCHA validation
+  * Email delivery using Nodemailer
+
+---
+
+### 🔐 Admin System
+
+* Secure **JWT-based authentication**
+* Admin login notification email
+* Forgot password support
+* Protected admin routes
+
+### 🧑‍💼 Admin Dashboard (`/profile`)
+
+Admin can **Create / Read / Update / Delete**:
+
+* Profile image & description
+* Education entries
+* Projects
+* Gallery images/videos
+* Home page popup content
+* Social media links
+
+---
+
+### ⚙️ Backend & Infrastructure
+
+* MongoDB with Mongoose
+* Cloudinary for media storage
+* Redis (optional) for caching
+* Nodemailer for email notifications
+* Free Image CAPTCHA integration
+* Secure environment configuration
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+
+* Next.js (App Router)
+* JSX (no TypeScript)
+* Tailwind CSS
+
+**Backend**
+
+* Next.js API Routes
+* MongoDB + Mongoose
+* JWT Authentication
+* Nodemailer
+
+**Other**
+
+* Cloudinary
+* Redis (optional)
+* PWA support
+
+---
+
+## 📁 Project Structure
+
+```
+app/
+├── page.jsx                # Home page
+├── project/page.jsx        # Projects page
+├── gallery/page.jsx        # Gallery page
+├── contact/page.jsx        # Contact page
+├── login/page.jsx          # Admin login
+├── profile/                # Admin dashboard
+│   ├── page.jsx
+│   └── profileClient.jsx
+│
+├── api/
+│   ├── admin/
+│   ├── contact/
+│   ├── education/
+│   ├── project/
+│   ├── gallery/
+│   └── profile/
+│
+lib/
+├── db.js                   # MongoDB connection
+├── nodemailer.js           # Email utilities
+├── auth.js                 # JWT helpers
+
+models/
+├── Admin.js
+├── Education.js
+├── Project.js
+├── Gallery.js
+├── Profile.js
+
+scripts/
+└── createAdmin.js          # One-time admin creation script
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 Environment Variables (`.env`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Database
+MONGODB_URI=mongodb+srv://...
 
-## Learn More
+# JWT
+JWT_SECRET=your_jwt_secret
 
-To learn more about Next.js, take a look at the following resources:
+# Admin
+ADMIN_EMAIL=admin@example.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# SMTP (Nodemailer)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=xxxx
+CLOUDINARY_API_KEY=xxxx
+CLOUDINARY_API_SECRET=xxxx
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 One-Time Admin Creation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create admin securely using script:
+
+```bash
+node scripts/createAdmin.js
+```
+
+Env required temporarily:
+
+```env
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=StrongPassword@123
+```
+
+⚠️ Remove these env values after running the script.
+
+---
+
+## 🛡️ Security Practices
+
+* No admin creation via API
+* JWT stored in HTTP-only cookies
+* CAPTCHA validation server-side
+* Admin login email alerts
+* Protected routes via middleware
+
+---
+
+## 📦 PWA Support
+
+* Installable as a Progressive Web App
+* Download option available in footer
+
+---
+
+## 🚀 Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Visit: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🏗️ Deployment Notes
+
+* Works with Vercel / VPS
+* Ensure env variables are set
+* Use production MongoDB & SMTP
+
+---
+
+## 📜 License
+
+This project is built for personal portfolio use. You are free to customize and extend it.
+
+---
+
+## 👨‍💻 Author
+
+**Shivam Roy**
+Full Stack Developer
+
+---
+
+If you are a recruiter or collaborator and want to discuss opportunities, feel free to reach out via the contact page.

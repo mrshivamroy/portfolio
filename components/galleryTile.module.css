@@ -1,0 +1,80 @@
+.tile {
+  cursor: pointer;
+  background: rgba(5, 15, 30, 0.9);
+  border: 2px solid #1da1f2;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.tile:hover {
+  background: #1da1f2;
+  border-color: #1e90ff;
+  transform: translateY(-3px);
+}
+
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.media {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #1da1f2;
+}
+
+/* Video overlay */
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+.caption {
+  padding: 0.5rem 0.75rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Responsive Tiles ─── */
+@media (max-width: 1024px) {
+  .caption {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .caption {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .caption {
+    font-size: 0.75rem;
+  }
+
+  .playIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
