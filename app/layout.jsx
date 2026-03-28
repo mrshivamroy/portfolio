@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2196f3" />
+        <meta name="google-site-verification" content="43OO9ZJqfb7aarEyy6AzP_rSo7OUqQDyF93IMhuWfQA" />
         {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
       </head>
