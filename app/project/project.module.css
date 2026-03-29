@@ -5,21 +5,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem; /* reduced from 1.5rem */
+  padding: 1rem;
   font-family: 'Arial', sans-serif;
 }
 
 /* Card */
 .card {
   width: 100%;
-  max-width: 900px; /* increased from 850px */
+  max-width: 900px;
   background: rgba(5, 15, 30, 0.9);
   border: 2px solid #1da1f2;
   box-shadow: 0 0 40px rgba(29, 161, 242, 0.25);
-  padding: 1.5rem; /* reduced from 2rem */
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* slightly reduced gap */
+  gap: 1rem;
   border-radius: 12px;
 }
 
@@ -29,7 +29,7 @@
   font-weight: 700;
   color: #ffffff;
   border-bottom: 2px solid #1da1f2;
-  padding-bottom: 0.5rem; /* reduced padding */
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -42,7 +42,7 @@
 }
 
 .toggleButton {
-  padding: 0.35rem 0.7rem; /* slightly smaller */
+  padding: 0.35rem 0.7rem;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -70,7 +70,7 @@
 /* Grid layout for project tiles */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* increased from 180px */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   justify-items: center;
 }
@@ -86,7 +86,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 240px; /* increased from 220px */
+  max-width: 240px;
 }
 
 .tile:hover {
@@ -97,22 +97,25 @@
 
 .tileImage {
   width: 100%;
-  height: 160px; /* increased from 140px */
+  height: 160px;
   object-fit: cover;
 }
 
 .tileContent {
-  padding: 0.4rem; /* reduced */
+  padding: 0.4rem;
   color: #fff;
   text-align: center;
   font-weight: 600;
-  font-size: 1rem; /* slightly larger font */
+  font-size: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-/* Popup modal */
+/* -------------------------- */
+/* Popup modal                 */
+/* -------------------------- */
+
 /* Popup modal overlay */
 .popupOverlay {
   position: fixed;
@@ -120,10 +123,10 @@
   background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 50;
-  padding: 1rem;
-  overflow-y: auto; /* added so overlay can scroll if popup is taller than viewport */
+  align-items: flex-start; /* Changed: Prevents the top from getting cut off when scrolling */
+  z-index: 9999; /* Changed: Guarantees it covers the navbar */
+  padding: 5rem 1rem 2rem 1rem; /* Changed: 5rem top padding ensures it fully clears the navbar physical space */
+  overflow-y: auto; 
 }
 
 /* Popup card */
@@ -134,14 +137,13 @@
   padding: 1.5rem;
   width: 100%;
   max-width: 650px;
-  max-height: 90vh; /* keeps popup within viewport */
-  overflow-y: auto; /* enables scroll for content */
+  margin: auto; /* Changed: Centers vertically/horizontally safely within the flex container */
+  /* max-height removed: We let the overlay handle the scrolling now so the content breathes */
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   box-shadow: 0 0 40px rgba(29, 161, 242, 0.3);
 }
-
 
 .popupHeader {
   display: flex;
@@ -149,7 +151,7 @@
   align-items: center;
   color: #fff;
   font-weight: 700;
-  font-size: 1.3rem; /* slightly larger */
+  font-size: 1.3rem;
 }
 
 .popupCloseButton {
@@ -171,7 +173,7 @@
 
 .popupImage {
   width: 100%;
-  height: 200px; /* increased */
+  height: 200px;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -211,6 +213,9 @@
   .tileImage { height: 120px; }
   .title { font-size: 1.5rem; }
   .grid { gap: 0.8rem; }
+  
+  /* Make sure the top padding is still enough on mobile */
+  .popupOverlay { padding: 4rem 1rem 2rem 1rem; } 
 }
 
 @media (max-width: 480px) {
@@ -220,10 +225,8 @@
   .grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; }
 }
 
-
-
 /* -------------------------- */
-/*     loading                */
+/* loading               */
 /* -------------------------- */
 
 /* Skeleton toggle */
